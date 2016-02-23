@@ -1,0 +1,17 @@
+{% load cms_tags %}
+<div class="col-md-12 Activities_list_card">
+	<div class="row">
+		<div class="col-md-4 col-sm-5  text-center Activities_list_card_l">
+			<h6>{{ instance.name }}</h6>
+			<hr/>
+			<p>{{ instance.datetime|date:"Y-n-j G:i:s" }}</p>
+			<p>{{ instance.location }}</p>
+			{{ instance.links|safe }}
+		</div>
+		<div class="col-md-8 col-sm-7 Activities_list_card_r">
+			{% for plugin in instance.child_plugin_instances %}
+				{% render_plugin plugin %}
+			{% endfor %}
+		</div>
+	</div>
+</div>

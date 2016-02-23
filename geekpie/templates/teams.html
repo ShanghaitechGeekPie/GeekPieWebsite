@@ -1,0 +1,29 @@
+{% extends "root.html" %}
+{% load staticfiles %}
+{% load cms_tags sekizai_tags menu_tags %}
+
+{% block root_css %}
+	<link href="{% static "css/teams.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block root_body %}
+	<div class="container" id="Teams">
+		<div class="row">
+			<div class="col-md-12">
+				<p>我们采用不同于常规社团的组织方式，以常规活动为载体，建立以项目团队为核心的社团架构，力图为社团成员提供充足的交流机会并鼓励协作创新。与此同时，社团还以开放为组织方式，扩大外围影响力，立足上科大力求打造上海乃至中国高校社团的旗舰。</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="Teams_list">
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="text-center">Teams<br><small>Learning · Sharing · Satisfing</small></h3>
+			</div>
+			<div class="col-md-10 col-md-offset-1">
+			{% placeholder 'teams' %}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

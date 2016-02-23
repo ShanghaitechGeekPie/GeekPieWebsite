@@ -1,0 +1,76 @@
+{% load staticfiles %}
+{% load cms_tags sekizai_tags menu_tags %}
+<!doctype html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Geek Pie Association @ ShanghaiTech University | 上海科技大学学生Geek Pie社团">
+	<meta name="keywords" content="shanghaitech,geekpie,极客,创客,上海科技大学,极客派,社团">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>{% page_attribute "page_title" %} - Geek Pie Association @ ShanghaiTech University</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+	<link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+	<link href="{% static "css/flat-ui.min.css" %}" rel="stylesheet">
+	<link href="{% static "css/common.css" %}" rel="stylesheet">
+	{% block root_css %}{% endblock %}
+
+	{% render_block "css" %}
+
+</head>
+<body>
+
+	{% cms_toolbar %}
+
+	<div class="container-fluid" id="top">
+		<div class="row-fluid">
+			<div class="col-md-12">
+				<div class="row-fluid">
+					<div class="col-md-12" id="top-menu">
+						<ul class="list-inline pull-left">
+							<span class="visible-xs-block">Geek Pie</span>
+							<span class="hidden-xs">Geek Pie Association @ ShanghaiTech University</span>
+						</ul>
+						<ul class="list-inline pull-right text-right visible-xs-block">
+							<li><a href="#" onclick="$('#top-menu').toggleClass('active')"><span class="fui-list"></span></a></li>
+						</ul>
+						<ul class="list-inline pull-right text-center" id="top-menu-list">
+							<li>&nbsp;</li>
+							{% show_menu 0 0 100 100 "menu/root_menu.html" %}
+						</ul>
+					</div>
+					<div class="col-md-12" id="top-logo">
+						<h1 id="association">We are <br class="visible-xs-block" />Geek Pie</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% block root_body %}{% endblock %}
+
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p>Geek Pie Association @ ShanghaiTech University<span class="pull-right">club-geekpie#shanghaitech.edu.cn</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--[if (gte IE 9)|!(IE)]><!-->
+		<script src="{% static "js/jquery.min.js" %}"></script>
+		<script src="{% static "js/flat-ui.min.js" %}"></script>
+	<!--<![endif]-->
+	<!--[if lte IE 8 ]>
+		<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	<![endif]-->
+
+	{% block root_js %}{% endblock %}
+
+	{% render_block "js" %}
+
+</body>
+</html>

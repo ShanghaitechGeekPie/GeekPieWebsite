@@ -1,0 +1,27 @@
+{% extends "root.html" %}
+{% load staticfiles %}
+{% load cms_tags sekizai_tags menu_tags %}
+
+{% block root_css %}
+	<link href="{% static "css/projects.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block root_body %}
+	<div class="container" id="Projects">
+		<div class="row">
+			<div class="col-md-12">
+				<p>Geek Pie是一个自由的地方，大家可以尽情发挥自己的创造力做出各种各样的作品。</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="Projects_list">
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="text-center">Projects<br><small>Coding · Hacking · Creating</small></h3>
+			</div>
+			{% placeholder 'projects' %}
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "root.html" %}
+{% load staticfiles %}
+{% load cms_tags sekizai_tags menu_tags %}
+
+{% block root_css %}
+	<link href="{% static "css/activities.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block root_body %}
+	<div class="container" id="Activities">
+		<div class="row">
+			<div class="col-md-12">
+				<p>Geek Pie是一个自由的地方，我们既有与各方合作的大型活动，又有自己的定期小聚，还有配合学校教学安排的辅助性科普讲座，这一切，都是源于自发的组织与贡献。</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="Activities_list">
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="text-center">Activities<br><small></small></h3>
+			</div>
+			{% placeholder 'activities' %}
+		</div>
+	</div>
+
+{% endblock %}

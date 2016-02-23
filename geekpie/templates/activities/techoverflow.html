@@ -1,0 +1,185 @@
+{% load staticfiles %}
+{% load cms_tags sekizai_tags menu_tags %}
+<!doctype html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Geek Pie Association @ ShanghaiTech University | 上海科技大学学生Geek Pie社团">
+	<meta name="keywords" content="shanghaitech,geekpie,极客,创客,上海科技大学,极客派,社团,Tech Overflow,TechOverflow,互联网技术沙龙">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Tech Overflow 互联网技术沙龙 - Geek Pie Association @ ShanghaiTech University</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Contcol" content="no-siteapp"/>
+
+	<link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+	<link href="{% static "css/flat-ui.min.css" %}" rel="stylesheet">
+	<link href="{% static "css/common.css" %}" rel="stylesheet">
+
+	<link href="{% static "css/activities/techoverflow.css" %}" rel="stylesheet">
+
+	{% render_block "css" %}
+
+</head>
+<body>
+
+	{% cms_toolbar %}
+
+	<div class="container-fluid" id="top">
+		<div class="row-fluid">
+			<div class="col-md-12 text-center">
+				<ul class="list-inline" id="menu">
+					<li><a href="#Introduction">Introduction</a></li>
+					<li><a href="#Overview">Overview</a></li>
+					<li><a href="#Register">Register</a></li>
+					<li><a href="#About">About</a></li>
+				</ul>
+				<img src="{% static "image/activities/techoverflow/logo.png" %}" id="logo">
+				<p id="intro">
+					12月5日 · 14:00~18:00 <br class="visible-xs-block" />上海科技大学 · 行政楼405
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="Introduction">
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="text-center">Introduction</h3>
+			</div>
+			<div class="col-md-12">
+				<p>Tech Overflow互联网技术沙龙是一个发源于高校学生的自主技术沙龙。一方展厅，三两个专题聚焦，七八位一线的大牛，再加上一群有兴趣的同学，这就是Tech Overflow所期望打造的世界。我们的初衷不过是想干干净净做一个能实实在在学到技术的交流平台。这里是专为学生团体和一线优秀大牛量身打造的技术 Party，这里强调实战与交流，每一期活动都会围绕着几个时下主题展开，力求从工程一线为大家带来最新的前沿方向与信息。</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid" id="Overview">
+		<div class="row">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="text-center">Overview</h3>
+					</div>
+					<div class="col-md-12 activity_card">
+						<div class="row">
+							<div class="col-lg-4 col-md-5 text-center activity_card_l">
+								<strong>第一期</strong>
+								<hr/>
+								<h6>Container · Docker · 精益开发</h6>
+								<br/>
+								<p>2015年12月5日 · 14:00~18:00</p>
+								<p>浦东新区海科路100号上海科技大学 · 行政楼405</p>
+								<p>人数 ≤ 170人</p>
+								<button class="btn btn-info">报名</button>
+							</div>
+							<div class="col-lg-8 col-md-7 activity_card_r text-center">
+								<h6>主题演讲</h6>
+								<br/>
+								<div class="row">
+									<div class="col-md-4 col-sm-4 text-center activity_card_r_people">
+										<h6>郭峰</h6>
+										<p>DaoCloud联合创始人&研发副总裁</p>
+										<p>《基于容器技术打造精益研发》</p>
+									</div>
+									<div class="col-md-4 col-sm-4 text-center activity_card_r_people">
+										<h6>颜开</h6>
+										<p>DaoCloud首席架构师</p>
+										<p>《云时代应用开发实践》</p>
+									</div>
+									<div class="col-md-4 col-sm-4 text-center activity_card_r_people">
+										<h6>袁晓沛</h6>
+										<p>七牛平台应用部负责人</p>
+										<p>《docker改变了什么》</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid" id="Register">
+		<div class="row">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="text-center">Register</h3>
+					</div>
+					<div class="col-md-4 col-md-offset-4 text-center">
+						<form method="POST" action="/datacontrol/activities/techoverflow/register/">
+							{% csrf_token %}
+							<p>第一期：Container · Docker · 精益开发</p>
+							<div class="form-group">
+								<input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name" required>
+								<span class="fui-user form-control-feedback" aria-hidden="true"></span>
+							</div>
+							<div class="form-group">
+								<input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email Address" required>
+								<span class="fui-mail form-control-feedback" aria-hidden="true"></span>
+							</div>
+							<div class="form-group">
+								<input type="number" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+								<span class="fui-chat form-control-feedback" aria-hidden="true"></span>
+							</div>
+							<button type="submit" class="btn btn-info btn-lg btn-block">Submit</button>
+							<p>通知将会发送到您的邮箱与手机上哦~</p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid" id="About">
+		<div class="row">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="text-center">About</h3>
+					</div>
+					<div class="col-md-12 text-center">
+						<h6 class="text-center">主办</h6>
+						<a href="http://www.shanghaitech.edu.cn/"><img src="{% static "image/activities/techoverflow/logo/shanghaitech.png" %}"></a>
+        			</div>
+					<div class="col-md-12 text-center">
+						<h6 class="text-center">协办</h6>
+						<a href="http://su.fudan.edu.cn/"><img src="{% static "image/activities/techoverflow/logo/fdu.png" %}"></a>
+						<a href="http://www.sjtu.edu.cn/"><img src="{% static "image/activities/techoverflow/logo/sjtu.png" %}"></a>
+						<a href="http://www.daocloud.io/"><img src="{% static "image/activities/techoverflow/logo/daocloud.png" %}"></a>
+						<a href="http://www.qiniu.com/"><img src="{% static "image/activities/techoverflow/logo/qiniu.png" %}"></a>
+						<a href="http://segmentfault.com/"><img src="{% static "image/activities/techoverflow/logo/segmentfault.png" %}"></a>
+        			</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	{% block root_body %}{% endblock %}
+
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p>Tech Overflow<span class="pull-right">club-geekpie#shanghaitech.edu.cn</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--[if (gte IE 9)|!(IE)]><!-->
+		<script src="{% static "js/jquery.min.js" %}"></script>
+		<script src="{% static "js/flat-ui.min.js" %}"></script>
+	<!--<![endif]-->
+	<!--[if lte IE 8 ]>
+		<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	<![endif]-->
+
+	{% block root_js %}{% endblock %}
+
+	{% render_block "js" %}
+
+</body>
+</html>

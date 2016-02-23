@@ -1,0 +1,64 @@
+{% extends "root.html" %}
+{% load staticfiles %}
+{% load cms_tags sekizai_tags menu_tags %}
+
+{% block root_css %}
+	<link href="{% static "css/overview.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block root_body %}
+	<div class="container" id="Information">
+		<div class="row">
+			<div class="col-md-12">
+				<p>Geek Pie 创立于 2014 年，伴随这个年轻的大学成长。我们是 Geek Pie ，一个非典高校的非典型人类聚集群。我们爱 Coding 也爱 Hacking ，爱 Creating 也爱 Sleeping 。我们致力于开源共享与开发，创意创造与极客风尚。我们不是纯粹的社团，我们只是纯粹的 hacker ，我们以常规活动为载体，却也致力于建立以项目团队为核心，这里是大家的自留地，也是创意的迸发点。</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="Information_pic">
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="text-center">Here we are<br><small>Learning · Sharing · Satisfing</small></h3>
+			</div>
+			<div class="col-md-4 text-right pic"><img src="{% static "image/overview/bg1.jpg" %}"></div>
+			<div class="col-md-8 text-right pic"><img src="{% static "image/overview/bg2.jpg" %}"></div>
+			<div class="col-md-4 text-right pic"><img src="{% static "image/overview/bg3.jpg" %}"></div>
+			<div class="col-md-4 text-right pic"><img src="{% static "image/overview/bg4.jpg" %}"></div>
+			<div class="col-md-4 text-right pic"><img src="{% static "image/overview/bg5.jpg" %}"></div>
+			<div class="col-md-12 text-right">
+				More about <a href="/teams/">teams</a> & <a href="/activities/">activities</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="Information_project">
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="text-center">What we do<br><small>Coding · Hacking · Creating</small></h3>
+			</div>
+			<div class="row">
+				<a class="col-md-2 col-sm-3 col-xs-6 text-center col-md-offset-2" href="http://wiki.geekpie.org/" target="_blank">
+					<img src="{% static "image/overview/wiki.png" %}">
+					<p><strong>WikiShanghaitech</strong></p>
+				</a>
+				<a class="col-md-2 col-sm-3 col-xs-6 text-center" href="http://grade.geekpie.org/" target="_blank">
+					<img src="{% static "image/overview/chengjiu.png" %}">
+					<p><strong>活动成就</strong></p>
+				</a>
+				<a class="col-md-2 col-sm-3 col-xs-6 text-center" href="http://mirrors.geekpie.org/" target="_blank">
+					<img src="{% static "image/overview/jingxiang.png" %}">
+					<p><strong>开源镜像</strong></p>
+				</a>
+				<a class="col-md-2 col-sm-3 col-xs-6 text-center" href="https://treehole.roychan.org/" target="_blank">
+					<img src="{% static "image/overview/treehole.png" %}">
+					<p><strong>TreeHole</strong></p>
+				</a>
+			</div>
+			<div class="col-md-12 text-right">
+				More about <a href="/projects/">projects</a>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}
