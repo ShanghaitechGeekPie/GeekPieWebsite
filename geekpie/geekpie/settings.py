@@ -42,15 +42,19 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # 'gunicorn',
 
+    'gunicorn',
+
     'cms',  # django CMS itself
     'treebeard',  # utilities for implementing a tree
     'menus',  # helper for model independent hierarchical website navigation
     'sekizai',  # for javascript and css management
     'djangocms_admin_style',  # for the admin skin. You **must** add 'djangocms_admin_style' in the list **before** 'django.contrib.admin'.
     'djangocms_text_ckeditor',
+
     'plugin_team_item',
     'plugin_project_item',
     'plugin_activity_item',
+
     'activities_techoverflow_db',
 
     'django.contrib.admin',
@@ -179,6 +183,10 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
+
+# Load conf
+from .CONFIG import *
+
 
 
 
