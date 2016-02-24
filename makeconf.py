@@ -14,12 +14,6 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-        'LOCATION': 'default',
-    }
-}
 '''
 
 if os.getenv('CONFIG_UPLUAD_DIR'):
