@@ -42,7 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # 'gunicorn',
 
-    'gunicorn',
+    # 'gunicorn',
 
     'cms',  # django CMS itself
     'treebeard',  # utilities for implementing a tree
@@ -50,14 +50,14 @@ INSTALLED_APPS = (
     'sekizai',  # for javascript and css management
     'djangocms_admin_style',  # for the admin skin. You **must** add 'djangocms_admin_style' in the list **before** 'django.contrib.admin'.
     'djangocms_text_ckeditor',
+    'activities_techoverflow_db',
+
+    'django.contrib.admin',
 
     'plugin_team_item',
     'plugin_project_item',
     'plugin_activity_item',
 
-    'activities_techoverflow_db',
-
-    'django.contrib.admin',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -187,6 +187,7 @@ MEDIA_URL = "/media/"
 # Load conf
 from .CONFIG import *
 
+FIXTURE_DIRS = ['/Users/eastpiger/Web/GeekPieWebsite/geekpie/fixtures',]
 
 
 
