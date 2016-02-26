@@ -12,6 +12,7 @@ RUN mkdir /geekpie
 WORKDIR /geekpie
 COPY . /geekpie
 COPY geekpie.conf /etc/nginx/sites-enabled/geekpie.conf
+RUN python3 /geekpie/geekpie/manage.py collectstatic --noinput
 RUN chmod +x ./loader.sh
 
 CMD ./loader.sh
