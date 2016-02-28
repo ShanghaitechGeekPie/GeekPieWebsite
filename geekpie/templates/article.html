@@ -1,0 +1,29 @@
+{% extends "root_with_right_menu.html" %}
+{% load staticfiles %}
+{% load cms_tags sekizai_tags menu_tags %}
+
+{% block root_css %}
+	<link href="{% static "css/editormd.min.css" %}" rel="stylesheet">
+	<link href="{% static "css/article.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block root_with_right_menu_body %}
+	<div class="container">
+		<div class="row" id="article">
+			<div class="col-md-12 text-center" id="article-title">
+				<h3>{% page_attribute "page_title" %}</h3>
+				<hr/>
+			</div>
+			<div class="col-md-12" id="article-content">
+				{% block article_content %}
+				{% placeholder 'article_content' %}
+				{% endblock %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block root_js %}
+	<script src="{% static "js/editormd.js" %}"></script>
+	<script src="{% static "js/article.js" %}"></script>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "root.html" %}
+{% load staticfiles %}
+{% load cms_tags sekizai_tags menu_tags %}
+
+{% block root_css %}
+	<link href="{% static "css/list.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block root_body %}
+	<div class="container">
+		<div class="row" id="list">
+			<div class="col-md-12 text-center" id="list-title">
+				<h3>{% page_attribute "page_title" %}</h3>
+			</div>
+			{% block list_body %}
+			{% show_sub_menu 1 None 1 "menu/list_menu.html" %}
+			{% endblock %}
+		</div>
+	</div>
+{% endblock %}

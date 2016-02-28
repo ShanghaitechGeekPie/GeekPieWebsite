@@ -1,0 +1,19 @@
+{% extends "root.html" %}
+{% load cms_tags sekizai_tags menu_tags %}
+
+{% block root_css %}
+{% endblock %}
+
+{% block root_body %}
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					{% block root_with_right_menu_body %}{% endblock %}
+				</div>
+				<div class="col-md-3" id="root-with-right-menu-menu">
+					{% block root_with_right_menu_menu %}
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+{% endblock %}

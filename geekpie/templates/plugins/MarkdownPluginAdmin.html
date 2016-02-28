@@ -1,0 +1,27 @@
+{% extends "admin/cms/page/plugin/change_form.html" %}
+
+{% block extrahead %}
+
+	<link rel="stylesheet" href="/static/css/font-awesome.min.css">
+	<script src="/static/js/jquery.min.js"></script>
+	<link rel="stylesheet" href="/static/css/simplemde.min.css">
+	<script src="/static/js/simplemde.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/highlight.js/latest/highlight.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/latest/styles/github.min.css">
+	<script type="text/javascript">
+		$(function(){
+		$("textarea#id_content").before("<div style='height: 30px;'></div>");
+		// code to actually use jQuery here...
+			var simplemde = new SimpleMDE({
+				element: document.getElementById("id_content"),
+				autoDownloadFontAwesome: false,
+				parsingConfig:{
+					allowAtxHeaderWithoutSpace: true
+				},
+				renderingConfig:{
+					codeSyntaxHighlighting:true
+				}
+			});
+		})
+	</script>
+{% endblock %}

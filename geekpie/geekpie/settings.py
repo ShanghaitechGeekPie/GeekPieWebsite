@@ -40,7 +40,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'gunicorn',
 
     # 'gunicorn',
 
@@ -57,6 +56,9 @@ INSTALLED_APPS = (
     'plugin_team_item',
     'plugin_project_item',
     'plugin_activity_item',
+    'plugin_markdown_item',
+
+    'geekpie_tags',
 
 )
 
@@ -123,6 +125,10 @@ CMS_TEMPLATES = (
     ('projects.html', 'Projects'),
     ('activities.html', 'Activities'),
     ('activities/techoverflow.html', 'Tech Overflow'),
+    ('article.html', 'Article'),
+    ('list.html', 'Basic List'),
+    ('list_overview.html', 'Overview List'),
+    ('list_news.html', 'News List'),
 )
 
 MIGRATION_MODULES = {
