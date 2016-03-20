@@ -58,6 +58,7 @@ INSTALLED_APPS = (
     'plugin_activity_item',
     'plugin_markdown_item',
     'plugin_plain_text',
+    'plugin_plain_html',
 
     'geekpie_tags',
 
