@@ -1033,10 +1033,10 @@ html5代码块的代码可以随意更改以适合你的应用，欢迎到论坛
 			C.addListener('loadedmetadata', C.loadedMetadataHandler);
 			C.addListener('ended', C.endedHandler);
 			C.addListener('volumechange', C.volumeChangeHandler);
-			if(C.getVars('m')!='' || parseInt( C.getSn('setup', 0))>0){
+			if((C.getVars('m')!='' && C.getVars('m')!=null) || parseInt( C.getSn('setup', 0))>0){
 				C._K_(c).style.cursor='pointer';
 			}
-			if(C.getVars('m')!='' || parseInt( C.getSn('setup', 1))==1){
+			if((C.getVars('m')!='' && C.getVars('m')!=null) || parseInt( C.getSn('setup', 1))==1){
 				C.addListener('click', C.html5Click);
 			}
         },
@@ -1357,7 +1357,7 @@ html5代码块的代码可以随意更改以适合你的应用，欢迎到论坛
         },
 		html5Click: function(){
 			var C = CKobject;
-			if(C.getVars('m')!=''){
+			if(C.getVars('m')!='' && C.getVars('m')!=null){
 				window.open(C.getVars('m'));
 			}
 		},
