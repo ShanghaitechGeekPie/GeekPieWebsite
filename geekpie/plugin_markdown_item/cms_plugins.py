@@ -8,7 +8,7 @@ import markdown
 
 class MarkdownPlugin(CMSPluginBase):
     model = MarkdownModel
-    name = _("Activity Item Plugin")
+    name = _("Markdown Plugin")
     render_template = "plugins/MarkdownPlugin.html"
     change_form_template = "plugins/MarkdownPluginAdmin.html"
     cache = True
