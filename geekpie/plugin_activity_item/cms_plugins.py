@@ -10,7 +10,7 @@ class ActivityItemPlugin(CMSPluginBase):
     render_template = "plugins/ActivityItemPlugin.html"
     cache = True
     allow_children = True  # This enables the parent plugin to accept child plugins
-    child_classes = ['TextPlugin']
+    child_classes = ['TextPlugin', 'PlainHtmlPlugin']
 
     def render(self, context, instance, placeholder):
         context['instance'] = instance
