@@ -43,7 +43,7 @@ def datacontrol_vot_reply(request):
         return HttpResponse('服务器傲娇啦！哼~')
 
 def datacontrol_vot_show(request):
-    replies = ActivityVOTModel.objects.all()[::-1][:10]
+    replies = ActivityVOTModel.objects.all()[::-1][:100]
     content = [{
         'name': reply.name,
         'reply': reply.reply,
