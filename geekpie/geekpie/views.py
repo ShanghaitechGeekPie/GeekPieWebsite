@@ -44,9 +44,9 @@ def datacontrol_vot_reply(request):
 
 def datacontrol_vot_show(request):
     replies = ActivityVOTModel.objects.all()[:10]
-    content = {
+    content = [{
         'name': reply.name,
         'reply': reply.reply,
         } for reply in replies]
-    }
+
     return JsonResponse(content)
