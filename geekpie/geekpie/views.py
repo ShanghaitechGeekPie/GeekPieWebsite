@@ -49,4 +49,4 @@ def datacontrol_vot_show(request):
         'reply': reply.reply,
         } for reply in replies]
 
-    return JsonResponse(content)
+    return JsonResponse(content, safe=False)
