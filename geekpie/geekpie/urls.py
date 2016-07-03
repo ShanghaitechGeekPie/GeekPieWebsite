@@ -22,7 +22,7 @@ from geekpie.views import datacontrol_activities_register, datacontrol_vot_reply
 
 urlpatterns = [
     url(r'^datacontrol/activities/vot/reply/$', datacontrol_vot_reply),
-    url(r'^datacontrol/activities/vot/reply/show/$', datacontrol_vot_reply),
+    url(r'^datacontrol/activities/vot/reply/show/$', datacontrol_vot_show),
     url(r'^datacontrol/activities/techoverflow/register/$', datacontrol_activities_register),
 ]+i18n_patterns('',
     url(r'^admin/', include(admin.site.urls)),
