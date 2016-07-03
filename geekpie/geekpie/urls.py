@@ -18,9 +18,10 @@ from django.conf.urls import include, url
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
-from geekpie.views import datacontrol_activities_register
+from geekpie.views import datacontrol_activities_register, datacontrol_vot_reply
 
 urlpatterns = [
+    url(r'^datacontrol/activities/vot/reply/$', datacontrol_vot_reply),
     url(r'^datacontrol/activities/techoverflow/register/$', datacontrol_activities_register),
 ]+i18n_patterns('',
     url(r'^admin/', include(admin.site.urls)),

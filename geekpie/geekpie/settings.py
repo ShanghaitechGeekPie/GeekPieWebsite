@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'djangocms_admin_style',  # for the admin skin. You **must** add 'djangocms_admin_style' in the list **before** 'django.contrib.admin'.
     'djangocms_text_ckeditor',
     'activities_techoverflow_db',
+    'activities_vot_db',
 
     'django.contrib.admin',
 
