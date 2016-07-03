@@ -1,8 +1,9 @@
 #coding=utf-8
 from django.template import RequestContext
 from django.shortcuts import render_to_response,HttpResponse,Http404
+from django.http import HttpResponse, JsonResponse
 from activities_techoverflow_db.models import ActivityTechOverflowModel
-from activities_vot_db import ActivityVOTModel
+from activities_vot_db.models import ActivityVOTModel
 from django.views.decorators.csrf import csrf_exempt
 import re
 
@@ -40,3 +41,12 @@ def datacontrol_vot_reply(request):
         return HttpResponse('biu~')
     except:
         return HttpResponse('服务器傲娇啦！哼~')
+
+def datacontrol_vot_show(request):
+    replies = ActivityVOTModel.objects.all()[:10]
+    content = {
+        'name': reply.name,
+        'reply': reply.reply,
+        } for reply in replies]
+    }
+    return JsonResponse(content)
