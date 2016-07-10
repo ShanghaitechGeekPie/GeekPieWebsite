@@ -28,10 +28,11 @@ def datacontrol_activities_register(request):
     except:
         return HttpResponse('<script language="javascript">alert("服务器傲娇啦！哼~");window.location.href="/activities/techoverflow/";</script>')
 
+import geekpie.filter
 @csrf_exempt
 def datacontrol_vot_reply(request):
     try:
-        f = filter.DFAFilter()
+        f = geekpie.filter.DFAFilter()
         f.parse("keywords")
         name = request.POST.get('name')
         reply = f.filter(request.POST.get('reply'))
@@ -44,7 +45,6 @@ def datacontrol_vot_reply(request):
     except:
         return HttpResponse('服务器傲娇啦！哼~')
 
-import filter
 def datacontrol_vot_show(request):
     replies = ActivityVOTModel.objects.all()[::-1][:100]
     content = [{
