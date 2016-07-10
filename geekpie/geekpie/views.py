@@ -31,19 +31,19 @@ def datacontrol_activities_register(request):
 import geekpie.filter
 @csrf_exempt
 def datacontrol_vot_reply(request):
-    try:
-        f = geekpie.filter.DFAFilter()
-        f.parse("keywords")
-        name = request.POST.get('name')
-        reply = f.filter(request.POST.get('reply'))
-        t = ActivityVOTModel(
-            name = name,
-            reply = reply,
-            )
-        t.save()
-        return HttpResponse('biu~')
-    except:
-        return HttpResponse('服务器傲娇啦！哼~')
+    # try:
+    f = geekpie.filter.DFAFilter()
+    f.parse("/geekpie/geekpie/geekpie/keywords")
+    name = request.POST.get('name')
+    reply = f.filter(request.POST.get('reply'))
+    t = ActivityVOTModel(
+        name = name,
+        reply = reply,
+        )
+    t.save()
+    return HttpResponse('biu~')
+    # except:
+    #     return HttpResponse('服务器傲娇啦！哼~')
 
 def datacontrol_vot_show(request):
     replies = ActivityVOTModel.objects.all()[::-1][:100]
