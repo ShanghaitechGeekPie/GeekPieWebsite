@@ -31,8 +31,10 @@ def datacontrol_activities_register(request):
 @csrf_exempt
 def datacontrol_vot_reply(request):
     try:
+        f = filter.DFAFilter()
+        f.parse("keywords")
         name = request.POST.get('name')
-        reply = request.POST.get('reply')
+        reply = f.filter(request.POST.get('reply'))
         t = ActivityVOTModel(
             name = name,
             reply = reply,
@@ -42,6 +44,7 @@ def datacontrol_vot_reply(request):
     except:
         return HttpResponse('服务器傲娇啦！哼~')
 
+import filter
 def datacontrol_vot_show(request):
     replies = ActivityVOTModel.objects.all()[::-1][:100]
     content = [{
