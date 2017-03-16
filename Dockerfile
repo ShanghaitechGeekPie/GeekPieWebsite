@@ -12,6 +12,7 @@ RUN mkdir /geekpie
 WORKDIR /geekpie
 COPY . /geekpie
 COPY geekpie.conf /etc/nginx/sites-enabled/geekpie.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 RUN chmod +x ./loader.sh
 
 CMD ./loader.sh
