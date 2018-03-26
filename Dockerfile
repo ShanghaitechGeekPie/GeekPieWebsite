@@ -4,7 +4,7 @@ MAINTAINER eastpiger @ Geek Pie Association
 
 EXPOSE 80
 
-RUN apt-get update && apt-get install zlib1g-dev nginx libjpeg-dev -y
+RUN apt-get update && apt-get install gcc python-dev zlib1g-dev nginx libjpeg-dev python3-pil -y
 RUN pip3 install mysqlclient gunicorn django-cms djangocms-text-ckeditor Markdown
 
 RUN mkdir /logs
